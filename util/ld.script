@@ -1,0 +1,34 @@
+ENTRY(_start)
+
+SECTIONS {
+  /* Set base address of memory */
+  . = 0x00000000;
+
+  /* Place start.s first */
+  .text.start : {
+    KEEP(*start.o(.text))
+  }
+
+  /* Then place the rest of the .text (like from test.c) */
+  .text : {
+    *(.text*)
+    *(.rodata*)
+  }
+
+  /* Global pointer for small data section */
+  __global_pointer$ = . + 0x800;
+
+  /* Initialized data section */
+  .data : {
+    *(.data)
+  }
+
+  /* Uninitialized data (BSS) */
+  __bss_start = .;
+  .bss : {
+    *(.sbss*)
+    *(.bss*)
+    *(COMMON)
+  }
+  _end = .;
+}
