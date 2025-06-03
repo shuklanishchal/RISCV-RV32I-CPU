@@ -1,3 +1,17 @@
+/*
+
+ALU decoder that determines which operation to run on the ALU.
+
+Inputs:
+    - opcode: 7-bit input for the instruction's opcode
+    - funct3: 3-bit input for the instruction's funct3
+    - funct7: 7-bit input for the instruction's funct7
+    - immediate: 21-bit input for the instruction's immediate value
+Outputs:
+    - alu_op: 4-bit output for the ALU operation that the ALU needs to run
+
+*/
+
 module alu_decoder(opcode, funct3, funct7, immediate, alu_op);
     input logic [6:0] opcode, funct7;
     input logic [2:0] funct3;
