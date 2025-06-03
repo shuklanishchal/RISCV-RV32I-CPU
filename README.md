@@ -16,7 +16,7 @@ The code for the CPU is written entirely in SystemVerilog, with the code for com
 
 ### First Use
 
-1. Clone the repository.
+1. Clone this repository.
 2. Add the file path to the binaries of the RISC-V GNU Toolchain to the `RISCV_FILEPATH` variable in the Makefile (line 2).
 3. Add the file path to the C library for RISC-V RV32I to the `RISCV_C_LIB` variable in the Makefile (line 4).
 4. `cd` to the repository in the command line.
