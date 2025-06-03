@@ -1,3 +1,9 @@
+/*
+
+Module to run the CPU core.
+
+*/
+
 module run_cpu();
     logic clk, reset;
 
